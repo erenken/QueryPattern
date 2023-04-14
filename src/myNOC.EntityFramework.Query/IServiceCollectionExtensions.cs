@@ -6,6 +6,9 @@ namespace myNOC.EntityFramework.Query
     {
 		public static IServiceCollection AddQueryPattern(this IServiceCollection services)
 		{
+			services.AddScoped<IQueryContext, QueryContext>();
+			services.AddScoped<IQueryRepository, QueryRepository>();
+
 			return services;
 		}
     }
