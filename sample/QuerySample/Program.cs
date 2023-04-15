@@ -1,29 +1,44 @@
 // See https://aka.ms/new-console-template for more information
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using myNOC.EntityFramework.Query;
-using QuerySample.Context;
+using myNOC.EntityFramework.Query.Extensions;
+using QuerySample.Data;
 using QuerySample.Entities;
 using QuerySample.Queries;
 
-using var addressBook = new MemoryContext();
-
+await SeedSampleData();
 
 IServiceCollection services = new ServiceCollection();
 services.AddQueryPattern();
-services.AddDbContext<MemoryContext>(opts => opts.UseInMemoryDatabase("AddresBook"));
 
 var provider = services.BuildServiceProvider();
 
-addressBook.Add<PersonEntity>(new PersonEntity { Id = 1, Name = "Abby" });
-addressBook.Add<PersonEntity>(new PersonEntity { Id = 2, Name = "Bob" });
-addressBook.Add<PersonEntity>(new PersonEntity { Id = 3, Name = "Charlie" });
-addressBook.Add<PersonEntity>(new PersonEntity { Id = 4, Name = "David" });
+var queryRepo = provider.GetRequiredService<IAddressBookContextRepository>();
+var result = await queryRepo.Query(new ContactGetAll());
+DisplayResults("Return All Contacts", result);
 
-var queryRepo = provider.GetRequiredService<IQueryRepository>();
-var result = await queryRepo.Query(new PersonGetAll());
+Console.WriteLine();
 
-foreach(var item in result)
+result = await queryRepo.Query(new ContactNameContains("a"));
+DisplayResults("Contacts Where Name Contain 'a'", result);
+
+Console.WriteLine();
+
+var id = await queryRepo.Query(new ContactGetIdByName("Bob"));
+Console.WriteLine($"Bob's Id is: {id}");
+
+static async Task SeedSampleData()
 {
-	Console.WriteLine(item.DisplayName);
+	var addressBook = new AddressBookDbContext();
+	addressBook.Add(new ContactEntity { Id = 1, Name = "Abby" });
+	addressBook.Add(new ContactEntity { Id = 2, Name = "Bob" });
+	addressBook.Add(new ContactEntity { Id = 3, Name = "Charlie" });
+	addressBook.Add(new ContactEntity { Id = 4, Name = "David" });
+	await addressBook.SaveChangesAsync();
+}
+
+static void DisplayResults(string title, IEnumerable<QuerySample.Models.ContactModel> result)
+{
+	Console.WriteLine(title);
+	foreach (var item in result)
+		Console.WriteLine(item.DisplayName);
 }

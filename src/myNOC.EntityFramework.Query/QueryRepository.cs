@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace myNOC.EntityFramework.Query
 {
-	public class QueryRepository : IQueryRepository
+	public abstract class QueryRepository : IQueryRepository
 	{
 		private readonly IQueryContext _context;
 

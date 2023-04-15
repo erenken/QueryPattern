@@ -4,15 +4,15 @@ using QuerySample.Models;
 
 namespace QuerySample.Queries
 {
-	public class PersonGetAll : IQueryList<PersonModel>
+	internal class ContactGetAll : IQueryList<ContactModel>
 	{
-		public PersonGetAll() { }
+		public ContactGetAll() { }
 
-		public IQueryable<PersonModel> Query(IQueryContext context)
+		public IQueryable<ContactModel> Query(IQueryContext context)
 		{
-			var persons = context.Set<PersonEntity>();
+			var persons = context.Set<ContactEntity>();
 			var query = from p in persons
-						select new PersonModel
+						select new ContactModel
 						{
 							Id = p.Id,
 							Name = p.Name,

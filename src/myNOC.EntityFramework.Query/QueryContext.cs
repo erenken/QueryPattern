@@ -2,18 +2,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace myNOC.EntityFramework.Query
 {
-	public class QueryContext : IQueryContext
+	public abstract class QueryContext : IQueryContext
 	{
-		private readonly DbContext _dbContext;
-
-		public QueryContext(DbContext dbContext)
-		{
-			_dbContext = dbContext;
-		}
+		public abstract DbContext GetContext();
 
 		public IQueryable<TEntity> Set<TEntity>() where TEntity : class
 		{
-			return _dbContext.Set<TEntity>();
+			return GetContext().Set<TEntity>();
 		}
 	}
 }
