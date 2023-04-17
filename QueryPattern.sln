@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{CFA418EB
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample", "sample", "{2F1180C1-B4C8-4A4F-A348-68D90ABD7787}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuerySample", "sample\QuerySample\QuerySample.csproj", "{06AA0485-2E8B-4592-970A-7EF12C6149C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuerySample", "sample\QuerySample\QuerySample.csproj", "{06AA0485-2E8B-4592-970A-7EF12C6149C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
