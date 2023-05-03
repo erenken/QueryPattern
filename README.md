@@ -1,3 +1,6 @@
+[![Build and Test](https://github.com/erenken/queryPattern/actions/workflows/build-tests.yml/badge.svg)](https://github.com/erenken/queryPattern/actions/workflows/build-tests.yml) [![Release](https://github.com/erenken/queryPattern/actions/workflows/release.yml/badge.svg)](https://github.com/erenken/queryPattern/actions/workflows/release.yml) <a href="https://www.nuget.org/packages/myNOC.EntityFramework.Query"><img src="https://img.shields.io/nuget/v/myNOC.EntityFramework.Query.svg" alt="NuGet Version" /></a> 
+<a href="https://www.nuget.org/packages/myNOC.EntityFramework.Query"><img src="https://img.shields.io/nuget/dt/myNOC.EntityFramework.Query.svg" alt="NuGet Download Count" /></a>
+
 # myNOC.EntityFramework.Query
 
 ## Overview
@@ -15,5 +18,11 @@ So, where you needed a simple quick list of users is now doing way more than it 
 This pattern also gives you the ability to easily test your queries.  As Steve points out in the podcast what might work fine in compile time, 
 or even within a unit test using mocked lists as your data, could give you a runtime error when running against EntityFramework.  
 
-You can checkout the code [here](./src/myNOC.EntityFramework.Query/).  I do have a simple sample project [here](./sample/QuerySample/), 
-and I am working on adding unit tests.
+## nuget.org
+
+For installation instructions please to to [myNOC.EntityFramework.Query](https://www.nuget.org/packages/myNOC.EntityFramework.Query/) at [nuget.org](https://nuget.org).
+
+## Documentation & Usage
+
+The documentation for the library can be found [here](./src/myNOC.EntityFramework.Query/README.md)
+A very simple sample project [here](./sample/QuerySample/), 
