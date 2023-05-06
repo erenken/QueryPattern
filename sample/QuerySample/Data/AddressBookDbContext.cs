@@ -5,7 +5,7 @@ namespace QuerySample.Data
 {
 	public class AddressBookDbContext : DbContext
 	{
-		public DbSet<ContactEntity> Contacts { get; set; }
+		public DbSet<ContactEntity> Contacts { get; set; } = default!;
 
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
