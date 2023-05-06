@@ -21,8 +21,8 @@
 		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
 		<Copyright>Copyright © myNOC LLC 2023</Copyright>
 		<AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
-		<PackageProjectUrl>https://github.com/erenken/weatherlink</PackageProjectUrl>
-		<RepositoryUrl>https://github.com/erenken/weatherlink</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/erenken/queryPattern</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/erenken/queryPattern</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 	</PropertyGroup>
 
