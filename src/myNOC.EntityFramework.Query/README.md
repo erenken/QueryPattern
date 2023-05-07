@@ -174,7 +174,7 @@ Once you have your `queryRepo` you can execute the query.
 var result = await queryRepo.Query(new ContactNameContains("a"));
 ```
 
-`ContactNameContains` inherits from `IQueryList<ContactModal>` so the `Query` method will return `IEnumerable<ContactModel>` where the name contains an `a`.  
+`ContactNameContains` inherits from `IQueryList<ContactModel>` so the `Query` method will return `IEnumerable<ContactModel>` where the name contains an `a`.  
 
 You run a scalar query the same way.
 
