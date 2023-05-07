@@ -19,7 +19,7 @@ namespace myNOC.EntityFramework.Query.Extensions
 		{
 			foreach(var it in GetServiceInterfaces(typeInterfaces.Type))
 			{
-				if (it.IsAssignableTo(interfaceType) && it != interfaceType)
+				if (it.IsAssignableTo(interfaceType))
 					typeInterfaces.Interfaces.Add(it);
 			}
 		}
