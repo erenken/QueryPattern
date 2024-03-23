@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<TargetFrameworks>net8.0</TargetFrameworks>
-		<LangVersion>11.0</LangVersion>
+		<LangVersion>12.0</LangVersion>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
@@ -19,6 +19,12 @@
 		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
 		<Copyright>Copyright © myNOC LLC 2023</Copyright>
 		<AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0|AnyCPU'">
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>pdbonly</DebugType>
+		<Optimize>true</Optimize>
 	</PropertyGroup>
 
 	<ItemGroup>
